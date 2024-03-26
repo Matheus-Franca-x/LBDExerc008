@@ -57,7 +57,7 @@ RETURNS @tabela TABLE
 AS
 BEGIN
 	INSERT INTO @tabela
-		SELECT (SELECT nome FROM cliente WHERE codigo = @codigo_cliente) AS nome_cliente, nome, @qtd AS qtd_produto, valor * @qtd AS valor_total FROM produto p WHERE codigo = @codigo_produto
+		SELECT (SELECT nome FROM cliente WHERE codigo = @codigo_cliente) AS nome_cliente, nome AS nome_produto, @qtd AS qtd_produto, valor * @qtd AS valor_total FROM produto p WHERE codigo = @codigo_produto
 	
 	RETURN
 END
